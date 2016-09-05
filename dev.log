@@ -1,0 +1,4 @@
+9-4-2016
+  Project begins. It is only going to be proof of concept quality (meaning low quality, low functionality). This piece provides a human-ish language for specifying simple contract terms. This will in turn generate a config file that can be read into code that will generate finished and workable contract code. 
+
+  Why go to so much trouble? Because humans shouldn't have to know how to code to be able to do ordinary business. Lawyers and judges shouldn't need to learn to code AND the law. Accountants and business folk shouldn't have to learn to code AND accounting and business regulations and such. This should all be easy!
