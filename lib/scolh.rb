@@ -2,7 +2,7 @@ require "scolh/version"
 require 'highline'
 require 'scolh/command_factory'
 require 'scolh/party_command'
-require 'scolh/payment'
+require 'scolh/payment_command'
 
 module Scolh
   def run

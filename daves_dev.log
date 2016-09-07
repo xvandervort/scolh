@@ -4,6 +4,12 @@
     Now, how do we express the "who" involved?
       This means I need to do 3 things: List parties. Add an alias to a party ("Joe's Bar and Grill, henceforth referred to as JBG") or list parties by number.
       But for now, let's just do it by name. KISS.
+      
+  Created payment class.
+  NOW: Enter payments from the command line. (DONE)
+  NEXT: list current terms
+  THEN: output some code stubs for a contract.
+  After that - who knows?
 
 9-4-2016
   Project begins. It is only going to be proof of concept quality (meaning low quality, low functionality). This piece provides a human-ish language for specifying simple contract terms. This will in turn generate a config file that can be read into code that will generate finished and workable contract code. 
