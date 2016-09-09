@@ -10,5 +10,10 @@ module Scolh
       # and how do we add address, phone number, etc? 
       @name = command_line.sub("party", "").strip
     end
+    
+    # eventually this will include address and stuff
+    def to_s
+      @name
+    end
   end
 end

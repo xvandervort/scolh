@@ -16,18 +16,22 @@ module Scolh
       
       # execution block here
       begin
-        out = cf.parse command
-        
-        # special handling goes here.
-        # for example, quit, list terms, or setting variables (not yet implemented!)
-        terms << out
+        if command == "list" || command == "l"
+          terms.map{|t| puts t }
+          
+        else        
+          out = cf.parse command
+          
+          # special handling goes here.
+          # for example, quit, list terms, or setting variables (not yet implemented!)
+          terms << out
+          
+          line_number += 1
+        end
         
       rescue e
         puts e
       end
-      
-      # then go on to the next line (unless there was an error)
-      line_number += 1
     end
   end
 end

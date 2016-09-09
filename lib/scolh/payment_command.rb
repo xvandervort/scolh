@@ -15,5 +15,9 @@ module Scolh
       @payee  = $3
       @date   = $4  # TODO= Parse the date into a date object
     end
+    
+    def to_s
+      "pay $#{ @amount } from #{ @payer } to #{ @payee } on #{ @date }"
+    end
   end
 end

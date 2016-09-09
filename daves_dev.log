@@ -1,3 +1,9 @@
+9-8-2016
+  Instituting cheap version of list command. 
+  Don't forget to gut the run command and replace it with an interpreter.
+  Should parties be numbered? (so that instead of saying 'jim' it would say 'party 1, aka jim'). Add that to the backog, someday when there is one.
+  NEXT: Parties must have Bitcoin style addresses! (before outputting code stubs. It isn't a proof of concept without the concept, after all)
+
 9-7-2016
   Payments have four terms: Who pays, who to, how much and when. Long run: how much and when could be dependent on some other things like delivery schedules, milestones. So, let's see how hard it would be to accomodate that. A payment schedule would be made up of sub payments, each with all of the above terms. BUT, instead of dollar amounts, it could be a percentage of something else.
     So a payment schedule comes later, as do percents. Right now we just go with the 4 major terms.
@@ -7,9 +13,9 @@
       
   Created payment class.
   NOW: Enter payments from the command line. (DONE)
-  NEXT: list current terms
+  NEXT: list current terms (later we'll list them in code as well as in English)
   THEN: output some code stubs for a contract.
-  After that - who knows?
+  AFTER THAT: Add physical and bitcoin style addresses to identity. THE COIN ADDRESS IS CRITICAL.
 
 9-4-2016
   Project begins. It is only going to be proof of concept quality (meaning low quality, low functionality). This piece provides a human-ish language for specifying simple contract terms. This will in turn generate a config file that can be read into code that will generate finished and workable contract code. 
@@ -17,4 +23,4 @@
   Why go to so much trouble? Because humans shouldn't have to know how to code to be able to do ordinary business. Lawyers and judges shouldn't need to learn to code AND the law. Accountants and business folk shouldn't have to learn to code AND accounting and business regulations and such. This should all be easy!
 
   It is now possible to add parties to the contract (but not their contact or identifying information). 
-  NEXT: Add payment amounts?
+  NEXT Add payment amounts?
