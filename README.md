@@ -20,7 +20,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ bundle exec exex/scolh
+
+This will start a command shell for entering contract terms as (roughly) plain English sentences.
+
+Examples (good so far):
+
+  party joe has payment address 1FfmbHfnpaZjK4vyi1okTjHHvtN455paPH
+  
+The above means that one of the parties to the contract is referred to as joe and can receive payments at the stated address (on some blockchain somewhere)
+
+  pay $35 from joe to jim on 3/21/2099
+  
+The above indicates an obligation for party named "joe" to pay another party named "jim" $35 (in some coin, not currently specified) on the stated date.
+
+  list
+  
+The above prints out the current terms in the order they were entered.
+
+  quit
+  
+The above exits the shell. Don't ask me why it's not "exit." It's just not (so far).
 
 ## Development
 
@@ -30,7 +50,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/scolh.
+Bug reports and pull requests are welcome on GitHub at https://github.com/xvandervort/scolh.
 
 
 ## License
