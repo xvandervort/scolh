@@ -1,3 +1,7 @@
+9/12
+  Bitcoin style addresses may be given at creation or later. Creation = done.
+  Update requires locating the thing to be updated first. Not important now.
+
 9-8-2016
   Instituting cheap version of list command. 
   Don't forget to gut the run command and replace it with an interpreter.
