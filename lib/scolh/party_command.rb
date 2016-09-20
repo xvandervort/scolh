@@ -11,7 +11,9 @@ module Scolh
     
     # eventually this will include address and stuff
     def to_s
-      @name
+      out = @name
+      out += " has payment address #{ @payment_address}" if @payment_address
+      out
     end
     
     def update
