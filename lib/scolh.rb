@@ -1,8 +1,6 @@
 require "scolh/version"
 require 'highline'
 require 'scolh/command_factory'
-require 'scolh/party_command'
-require 'scolh/payment_command'
 
 module Scolh
   def run
@@ -23,10 +21,14 @@ module Scolh
           out = cf.parse command
           
           # special handling goes here.
-          # for example, quit, list terms, or setting variables (not yet implemented!)
-          terms << out
-          
-          line_number += 1
+          # for example setting variables (not yet implemented!)
+          if out.class.name == 'Scolh::OutputCommand'
+            puts out.run(terms)
+            
+          else
+            terms << out
+            line_number += 1
+          end
         end
         
       rescue e

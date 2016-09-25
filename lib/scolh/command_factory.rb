@@ -1,4 +1,6 @@
 require_relative 'party_command'
+require_relative 'payment_command'
+require_relative 'output_command'
 
 module Scolh
   class CommandFactory
@@ -11,6 +13,9 @@ module Scolh
         
       elsif command =~ /^pay/
         PaymentCommand.new command
+        
+      elsif command =~ /^print/
+        OutputCommand.new command
       
       else
         # This may be a pass-through thing - treat input as simple text

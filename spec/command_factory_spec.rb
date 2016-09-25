@@ -17,4 +17,10 @@ describe Scolh::CommandFactory do
     comm = @c.parse "pay $35 from joe to jim on 3/11/2999"
     expect(comm).to be_kind_of(Scolh::PaymentCommand)
   end
+  
+  it "should know output command" do
+    # more intuitive than 'output' but may change in the future to something more flexible.
+    comm = @c.parse "print"
+    expect(comm).to be_kind_of(Scolh::OutputCommand)
+  end
 end

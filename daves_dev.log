@@ -1,3 +1,8 @@
+9/25
+  Creating a class to output contract code (stubs). In javascript? Or ruby?
+    Okay. There's a basic implementation that outputs a dummy string instead of code.
+    Actually generating something that looks like code is next.
+
 9/12
   Bitcoin style addresses may be given at creation or later. Creation = done.
   Update requires locating the thing to be updated first. Not important now.
