@@ -1,6 +1,6 @@
 # Scolh
 
-Scolh stands for something like "Smart COntract Language for Humans." This is proof of concept code that is intended to allow people to enter contract information in plain language and then generate a configuration file that a smart language interpreter can work with. Or something like that. Ideas may become more clear as time and work go on.
+Scolh stands for something like "Smart COntract Language for Humans." This is proof of concept code that is intended to allow people to enter contract information in plain language and then generate a code or configuration file that a smart language interpreter can work with. Or something like that. Ideas may become more clear as time and work go on.
 
 ## Installation
 
@@ -43,6 +43,12 @@ The above indicates an obligation for party named "joe" to pay another party nam
 ```
   
 The above prints out the current terms in the order they were entered.
+
+```
+  print
+```
+
+The print command prints out working contract code (well, no. It's not really implemented yet but that's the intent)
 
 ```
   quit

@@ -2,6 +2,7 @@
   Creating a class to output contract code (stubs). In javascript? Or ruby?
     Okay. There's a basic implementation that outputs a dummy string instead of code.
     Actually generating something that looks like code is next.
+    EXCEPT: Maybe it's time to do some validation.
 
 9/12
   Bitcoin style addresses may be given at creation or later. Creation = done.
