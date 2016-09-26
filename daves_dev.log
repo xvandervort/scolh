@@ -1,8 +1,11 @@
 9/25
   Creating a class to output contract code (stubs). In javascript? Or ruby?
-    Okay. There's a basic implementation that outputs a dummy string instead of code.
-    Actually generating something that looks like code is next.
-    EXCEPT: Maybe it's time to do some validation (token started).
+  Okay. There's a basic implementation that outputs a dummy string instead of code.
+  Actually generating something that looks like code is next.
+  EXCEPT: Maybe it's time to do some validation (token started). Because you want to run validation before trying to compile the code, so as to avoid generating a bogus contract.
+  NEXT: More validations.
+  THEN: Back to generating something like contract code.
+  AND THEN: How about a help command?
 
 9/12
   Bitcoin style addresses may be given at creation or later. Creation = done.

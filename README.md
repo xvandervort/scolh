@@ -51,6 +51,12 @@ The above prints out the current terms in the order they were entered.
 The print command prints out working contract code (well, no. It's not really implemented yet but that's the intent)
 
 ```
+  check
+```
+
+The check command examines contract terms for internal consistency. For example, a contract that has only one party isn't really a contract. Or if both parties have the same payment address - or no address at all, that would also fail the check (at least, once that bit is implemented).
+
+```
   quit
 ```
   

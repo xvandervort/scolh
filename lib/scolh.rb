@@ -1,5 +1,6 @@
 require "scolh/version"
 require 'highline'
+require 'highline/import'
 require 'scolh/command_factory'
 
 module Scolh
@@ -22,17 +23,17 @@ module Scolh
           
           # special handling goes here.
           # for example setting variables (not yet implemented!)
+          # TODO: Extract special handling from this location
+          #       Maybe a handling method on the same class?
           if out.class.name == 'Scolh::OutputCommand'
-            puts out.run(terms)
+            say out.run(terms)
             
           elsif out.class.name == 'Scolh::CheckCommand'
             if out.run terms
-              # TODO: Make this output green
-              puts "This contract passes validation."
+              say "<%= color('This contract passes validation.', :green) %>"
             
             else
-              # TODO: Make this output red
-              puts "This contract fails validation on the following errors:"
+              say "<%= color('This contract fails validation with these errors:', :red) %>"
               out.errors.map{|x| puts "\t#{ x }"}
             end
           else
@@ -41,7 +42,7 @@ module Scolh
           end
         end
         
-      rescue e
+      rescue Exception => e 
         puts e
       end
     end
