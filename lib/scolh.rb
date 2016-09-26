@@ -25,6 +25,16 @@ module Scolh
           if out.class.name == 'Scolh::OutputCommand'
             puts out.run(terms)
             
+          elsif out.class.name == 'Scolh::CheckCommand'
+            if out.run terms
+              # TODO: Make this output green
+              puts "This contract passes validation."
+            
+            else
+              # TODO: Make this output red
+              puts "This contract fails validation on the following errors:"
+              out.errors.map{|x| puts "\t#{ x }"}
+            end
           else
             terms << out
             line_number += 1

@@ -1,6 +1,7 @@
 require_relative 'party_command'
 require_relative 'payment_command'
 require_relative 'output_command'
+require_relative 'check_command'
 
 module Scolh
   class CommandFactory
@@ -16,6 +17,9 @@ module Scolh
         
       elsif command =~ /^print/
         OutputCommand.new command
+        
+      elsif command =~ /^check/
+        CheckCommand.new # TODO: parse switches
       
       else
         # This may be a pass-through thing - treat input as simple text
