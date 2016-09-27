@@ -14,8 +14,14 @@ module Scolh
     def run(terms = [])
       @errors = []
       
+      # checks for parties.
+      parties = terms.collect{|x| x if x.class.name == "Scolh::PartyCommand"}.compact
       # check number 1: Are there at least 2 parties in the transaction?
-      count_parties(terms)
+      count_parties(parties)
+      
+      # check number 2 looks for payment addresses in the parties
+      check_payment_addresses(parties)
+      # end party checks
       
       (@errors.size == 0)
     end
@@ -25,8 +31,8 @@ module Scolh
     # in: Terms list
     # out: true if there are at least 2 parties to this contract
     #      false, otherwise
-    def count_parties(t)
-      s = t.collect{|x| x.class.name == "Scolh::PartyCommand"}.size
+    def count_parties(parties)
+      s = parties.size
 
       if s == 0
         @errors << "No parties given"
@@ -39,6 +45,18 @@ module Scolh
       end
       
       (s > 1)      
+    end
+    
+    # runs self check on each party for valid info
+    def check_payment_addresses(parties)
+      out = []
+      parties.each do |party|
+        res = party.self_check
+        party.errors.map{|err| @errors << "Party #{ party.name } #{ err }"} unless res == true
+        out << res
+      end
+      
+      out.include?(false)
     end
   end
 end

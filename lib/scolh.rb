@@ -34,7 +34,7 @@ module Scolh
             
             else
               say "<%= color('This contract fails validation with these errors:', :red) %>"
-              out.errors.map{|x| puts "\t#{ x }"}
+              out.errors.map{|x| say "\t#{ x }"}
             end
           else
             terms << out

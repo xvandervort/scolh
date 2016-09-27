@@ -60,7 +60,7 @@ The check command examines contract terms for internal consistency. For example,
   quit
 ```
   
-The above exits the shell. Don't ask me why it's not "exit." It's just not (so far).
+The above exits the shell. Don't ask why it's not "exit." It's just not (so far).
 
 ## Development
 

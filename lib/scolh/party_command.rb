@@ -3,10 +3,11 @@ module Scolh
   # maybe later it will also be attached to their responsibilities
   # OR even have a hierarchy
   class PartyCommand
-    attr_reader :name, :payment_address
+    attr_reader :name, :payment_address, :errors
     
     def initialize(command_line)
       @name, @payment_address = parse(command_line)
+      @errors = []
     end
     
     # eventually this will include address and stuff
@@ -18,6 +19,12 @@ module Scolh
     
     def update
       #not yet implemented
+    end
+    
+    # returns true if all required fields are filled
+    # with acceptable values. False otherwise
+    def self_check
+      address_exists
     end
     
     private
@@ -39,6 +46,12 @@ module Scolh
       end
       
       [name, payment_address]
+    end
+    
+    # returns true if payment address field has a value
+    def address_exists
+      @errors << "needs payment address" if @payment_address.nil?
+      !@payment_address.nil?
     end
   end
 end
