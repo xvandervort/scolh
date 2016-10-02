@@ -24,7 +24,8 @@ module Scolh
     # returns true if all required fields are filled
     # with acceptable values. False otherwise
     def self_check
-      address_exists
+      address_exists? &&
+      address_is_valid?
     end
     
     private
@@ -49,9 +50,23 @@ module Scolh
     end
     
     # returns true if payment address field has a value
-    def address_exists
+    def address_exists?
       @errors << "needs payment address" if @payment_address.nil?
       !@payment_address.nil?
+    end
+    
+    # For PoC purposes, any string with between 27 and 35 characters
+    # and all of the characters in 0-9A-E is considered valid.
+    def address_is_valid?
+      if @payment_address =~ /^[\w\d]+/ &&
+         @payment_address.length > 26 &&
+         @payment_address.length < 36
+         
+         true
+       else
+        @errors << "has an invalid payment address"
+        false
+       end
     end
   end
 end

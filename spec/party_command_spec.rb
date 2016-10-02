@@ -35,5 +35,20 @@ describe Scolh::PartyCommand do
       expect(party.self_check).to eq(false)
       expect(party.errors).to include('needs payment address')
     end
+    
+    # For demo purposes, anyhting with 27 to 40 characters,
+    # all within 0-9A-F is counted as good. Obviously
+    # if this were a production system, that would have to be
+    # overridden by something targeted to the actual blockchain
+    it "should know when bad payment address found" do
+      party = Scolh::PartyCommand.new "party phil has payment address 4"
+      expect(party.self_check).to eq(false)
+      expect(party.errors).to include('has an invalid payment address')
+    end
+    
+    it "should know when good payment address found" do
+       party = Scolh::PartyCommand.new "party phil has payment address 10a34d0030f55a32abb3ee60101b2"
+       expect(party.self_check).to eq(true)
+    end
   end
 end

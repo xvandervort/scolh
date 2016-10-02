@@ -20,7 +20,7 @@ module Scolh
       count_parties(parties)
       
       # check number 2 looks for payment addresses in the parties
-      check_payment_addresses(parties)
+      check_for_payment_addresses(parties)
       # end party checks
       
       (@errors.size == 0)
@@ -48,7 +48,7 @@ module Scolh
     end
     
     # runs self check on each party for valid info
-    def check_payment_addresses(parties)
+    def check_for_payment_addresses(parties)
       out = []
       parties.each do |party|
         res = party.self_check

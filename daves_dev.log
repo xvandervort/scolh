@@ -1,7 +1,12 @@
+10/1
+  WAIT! This is a proof of concept. A "valid" address definition does not need to be perfectly configurable. It DOES need to accept something more or less real. For now the checking module will validate anything between 27 and 40 characters if those characters are 0-9 and A-E. In production it should be possible to load from a set of known types or even load a custom made validation module. But that's a bit of overkill now.
+  NEXT?
+
 9/27
   Adding validation that each party has a payment address.
   NOTE: checking whether payment address is valid requires configuration per instance. That is, a Bitcoin address is different from Ether, is different from Litecoin, etc. (Though sometimes differences are small, they count). How to specify valid address standards?
   SOON: Load statements from a file (because it's so much easier than testing this thing by typing stuff into the shell)
+  ALSO: Before code will print, you have to pass checks (though it should be possible to disable individual checks)
 
 9/25
   Creating a class to output contract code (stubs). In javascript? Or ruby?
