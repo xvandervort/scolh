@@ -43,7 +43,7 @@ module Scolh
         # TODO: Verify that payment address is valid.
         # BUT since format changes depending on blockchain used,
         # this should be managed by configurable plugin modules.
-        payment_address = $1
+        payment_address = $1.downcase  #for consistency
       end
       
       [name, payment_address]
@@ -58,9 +58,9 @@ module Scolh
     # For PoC purposes, any string with between 27 and 35 characters
     # and all of the characters in 0-9A-E is considered valid.
     def address_is_valid?
-      if @payment_address =~ /^[\w\d]+/ &&
-         @payment_address.length > 26 &&
-         @payment_address.length < 36
+      if (@payment_address =~ /^[\w\d]+/ &&
+          @payment_address.length > 26 &&
+          @payment_address.length < 36) || @payment_address == 'dummy'
          
          true
        else

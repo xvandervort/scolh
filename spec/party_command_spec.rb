@@ -50,5 +50,11 @@ describe Scolh::PartyCommand do
        party = Scolh::PartyCommand.new "party phil has payment address 10a34d0030f55a32abb3ee60101b2"
        expect(party.self_check).to eq(true)
     end
+    
+    # TODO: look for coin spec file and apply accordingly
+    it "should accept 'dummy' as a payment address" do
+      party = Scolh::PartyCommand.new "party phil has payment address dummy"
+      expect(party.self_check).to eq(true)
+    end
   end
 end
