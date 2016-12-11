@@ -39,6 +39,12 @@ The above means that one of the parties to the contract is referred to as joe an
 The above indicates an obligation for party named "joe" to pay another party named "jim" $35 (in some coin, not currently specified) on the stated date.
 
 ```
+  term start 12/11/2017
+```
+
+The above indicates that the contract comes into force on December 11, 2017. Conditions (such as 10 days afetr signature) and end date are not yet implemented.
+
+```
   list
 ```
   

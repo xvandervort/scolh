@@ -1,5 +1,11 @@
+12/11
+  Realized today that there's an important feature missing: Time. A contract has a start date and an end condition (which might be time, it might be delivery of goods or other thing). Different terms might also have a time component but for now, I'm just going to encode the start date. There should be other ways of doing it, such as "contract enters into force 10 days after signing by all parties." To do that, I'm going to have to encode events but that's a long way off! To do events, you also need oracles. Actually, to do time correctly, you need to also encode time zones. Hmmm. I'll have to think about that.
+  
+  Anyway: NOW: Add a parameter for date (and optionally time?) of term.
+  NEXT: When do we get to code generation?
+
 12/1
-  Dummy and autogenerate parameters, both.
+  Dummy parameter.
   
   THOUGHT: Should create a module that defines a good coin address and transaction parameters - for a fictional coin (that just happens to look a lot like Ether) - to use as an example. It would make for a much more robust simulation. But that's probably not for today.
 
