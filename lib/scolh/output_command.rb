@@ -12,8 +12,13 @@ module Scolh
     end
     
     # turn supplied terms list into a contract
-    def run(terms = [])
-      "This is pretend contract code"
+    def run(terms = [], language = 'js')
+      code = []
+      terms.each do |term|
+        code << generate(language, term)
+      end
+      
+      code.join("\n")
     end
 
     # lang refers to the programming languge. 
@@ -23,6 +28,8 @@ module Scolh
       obj.class.name =~ /Scolh::(.*)Command/
       classname = $1.downcase
       increment_counter(classname)
+
+      # TODO: add in error handling for unknown command types
       template = File.open(template_path(lang, classname), "r").read
       r = ERB.new template
       r.result binding

@@ -57,20 +57,27 @@ describe Scolh::OutputCommand do
       expect(js).to eq(payment_js(payment1))
     end
 
-    #it "should return code for the whole list"
+    it "should return code for the whole list" do
+      js = @o.run @list, 'js'
+      target = party_js(@list.first) + "\n" +
+               party_js(@list[1], 2) + "\n" +
+               payment_js(@list.last)
+
+      expect(js).to eq(target)
+    end
   end
 
   # This solution only works for very simple code.
   # Note: Tried the ~ Heredoc syntax and the whole thing blew up!
-  def party_js(party)
-    "var party1 = {\n" +
+  def party_js(party, count = 1)
+    "var party#{count} = {\n" +
     "  name: '#{party.name}',\n" +
     "  payment_address: '#{party.payment_address}'\n" +
     "}"
   end
 
-  def payment_js(payment)
-    "var payment1 = {\n" +
+  def payment_js(payment, count = 1) 
+    "var payment#{count} = {\n" +
     "  payer: '#{payment.payer}',\n" +
     "  payee: '#{payment.payee}',\n" +
     "  amount: '#{payment.amount}',\n" +
