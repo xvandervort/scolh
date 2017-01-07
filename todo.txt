@@ -1,5 +1,6 @@
-1.  A dummy payment address should not say the word 'dummy' but should have something that looks address like.
+1.  A dummy payment address should not say the word 'dummy' but should have something that looks address like. (DONE)
 2. Term should have an end date or condition. (all payments made?)
 3. When a mistake is made (such as misspelling a party's name) it should be possible to edit it.
 4. A contract should be writable to a yaml or json file so it can be worked on across multiple sessions.
-5. Schedule a payment! (Party X will send Y coin to party Z no later than 5:00 PM on date A/B/C)
+5. Schedule a payment! (Party X will send Y coin to party Z no later than 5:00 PM on date A/B/C) (Partly done?)
+6. Payment object should have full payer/payee info (including addresses), not just name.

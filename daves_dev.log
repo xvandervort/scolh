@@ -1,3 +1,8 @@
+1/6/2017
+  NOW: using Erb to process some basic code templates. Nothing like a full contract yet, just translating (currently) the party objects to javascript code. In theory, converting all the little pieces using consistent variable and function names should make compiling a final result easy. 
+
+  BUG: Payments are not paid from person to person but from address to address. In expressing a payment, the correct address needs to be looked up somewhere. One way to resolve this is that every time a new payment and/or party is added to the list, do a correlation step.
+
 12/11
   Realized today that there's an important feature missing: Time. A contract has a start date and an end condition (which might be time, it might be delivery of goods or other thing). Different terms might also have a time component but for now, I'm just going to encode the start date. There should be other ways of doing it, such as "contract enters into force 10 days after signing by all parties." To do that, I'm going to have to encode events but that's a long way off! To do events, you also need oracles. Actually, to do time correctly, you need to also encode time zones. Hmmm. I'll have to think about that.
   

@@ -1,22 +1,48 @@
+require 'erb'
+
 module Scolh
   # output is the class that generates the actual code for the contract
-  # In production, it probably just fills in the blanks in some templates
-  # but in this PoC system, it just prints out some stubs.
-  # Done as a class because it needs switches to control behavior
   class OutputCommand
     attr_reader :dummy
     
     def initialize(command_line = "")
       switches = parse(command_line)
       @dummy = (switches[:dummy] == true)
+      @counters ={}
     end
     
     # turn supplied terms list into a contract
     def run(terms = [])
       "This is pretend contract code"
     end
+
+    # lang refers to the programming languge. 
+    # Currently only javascript (js) is supported.
+    # cls is the class to be used
+    def generate(lang, obj)
+      obj.class.name =~ /Scolh::(.*)Command/
+      classname = $1.downcase
+      increment_counter(classname)
+      template = File.open(template_path(lang, classname), "r").read
+      r = ERB.new template
+      r.result binding
+    end
+
+    def template_path(lang, cl)
+      # note how "lang" is used for both the folder and the extension
+      "#{File.dirname(__FILE__)}/templates/#{lang}/#{cl}.erb.#{lang}"
+    end
     
     private
+
+    # counters make sure variable name clashes are avoided during generation
+    def increment_counter(key)
+      if @counters.key?(key)
+        @counters[key] += 1
+      else
+        @counters[key] = 1
+      end
+    end
     
     def parse(line)
       # Print is the user friendly alias for output.

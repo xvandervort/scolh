@@ -39,5 +39,43 @@ describe Scolh::OutputCommand do
       out = @o.run @list
       expect(out).to be_kind_of(String)
     end
+
+    it "should know where to find party javascript template" do
+      f = @o.template_path(:js, :party)
+      expect(f).to be_kind_of(String)
+    end
+
+    it "should return party js" do
+      party1 = @list.first
+      js = @o.generate('js', party1)
+      expect(js).to eq(party_js(party1))
+    end
+
+    it "should return payment js" do
+      payment1 = @list[2]
+      js = @o.generate('js', payment1)
+      expect(js).to eq(payment_js(payment1))
+    end
+
+    #it "should return code for the whole list"
+  end
+
+  # This solution only works for very simple code.
+  # Note: Tried the ~ Heredoc syntax and the whole thing blew up!
+  def party_js(party)
+    "var party1 = {\n" +
+    "  name: '#{party.name}',\n" +
+    "  payment_address: '#{party.payment_address}'\n" +
+    "}"
+  end
+
+  def payment_js(payment)
+    "var payment1 = {\n" +
+    "  payer: '#{payment.payer}',\n" +
+    "  payee: '#{payment.payee}',\n" +
+    "  amount: '#{payment.amount}',\n" +
+    "  trigger_type: 'Date',\n" +
+    "  trigger_detail: '#{payment.date}'\n" +
+    "}"
   end
 end
