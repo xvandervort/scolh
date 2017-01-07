@@ -18,7 +18,7 @@ module Scolh
         code << generate(language, term)
       end
       
-      code.join("\n")
+      code.join("\n\n")
     end
 
     # lang refers to the programming languge. 

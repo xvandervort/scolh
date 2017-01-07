@@ -3,6 +3,14 @@
 
   BUG: Payments are not paid from person to person but from address to address. In expressing a payment, the correct address needs to be looked up somewhere. One way to resolve this is that every time a new payment and/or party is added to the list, do a correlation step.
 
+  NEXT:
+    1. Test code generation with varying conditions (such as missing addresses)
+    2. Redirect generated code to an output file id desired
+    3. Run checks before outputting code (unless overridden?)
+    4. There is no four.
+    5. Fix the above bug.
+    6. Develop some boilerplate code?
+
 12/11
   Realized today that there's an important feature missing: Time. A contract has a start date and an end condition (which might be time, it might be delivery of goods or other thing). Different terms might also have a time component but for now, I'm just going to encode the start date. There should be other ways of doing it, such as "contract enters into force 10 days after signing by all parties." To do that, I'm going to have to encode events but that's a long way off! To do events, you also need oracles. Actually, to do time correctly, you need to also encode time zones. Hmmm. I'll have to think about that.
   

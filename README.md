@@ -42,7 +42,7 @@ The above indicates an obligation for party named "joe" to pay another party nam
   term start 12/11/2017
 ```
 
-The above indicates that the contract comes into force on December 11, 2017. Conditions (such as 10 days afetr signature) and end date are not yet implemented.
+The above indicates that the contract comes into force on December 11, 2017. Conditions (such as 10 days after signature) and end date are not yet implemented.
 
 ```
   list
@@ -54,7 +54,7 @@ The above prints out the current terms in the order they were entered.
   print
 ```
 
-The print command prints out working contract code (well, no. It's not really implemented yet but that's the intent)
+The print command prints out (fragments of) working contract code
 
 ```
   check
