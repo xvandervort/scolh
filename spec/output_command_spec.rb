@@ -59,8 +59,8 @@ describe Scolh::OutputCommand do
 
     it "should return code for the whole list" do
       js = @o.run @list, 'js'
-      target = party_js(@list.first) + "\n" +
-               party_js(@list[1], 2) + "\n" +
+      target = party_js(@list.first) + "\n\n" +
+               party_js(@list[1], 2) + "\n\n" +
                payment_js(@list.last)
 
       expect(js).to eq(target)
