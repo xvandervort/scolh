@@ -1,3 +1,12 @@
+1/21
+  MISSING FEATURE: When someone pays, there should be an entry referring to WHAT they are paying for, even if it's just a text string explaining the consideration. In particular, think ahead. Suppose a smart contract encodes a payment to be triggered as a penalty for late delivery of goods. Shouldn't there be a label on that payment explaining that? Of course, in the future there's a plan to have "triggers" for payment. But does that necessarily satisfy the condition? There should be a human-readable string explaining it as well. There is, however, some danger that lazy people will fill in the string with something like, "payment for services rendered." That's not good. 
+    Another approach might be to have an overall purpose or type for the contract. And an idea whether it's a one-off or some kind of ongoing relationship.
+    Simplest example, though is, what about a fine for late payment, such as when a credit card payment is late? That is sometimes calculated by an equation (such as 0.1% of outstanding balance) and has a specific trigger (no on-time payment registered). It's a very interesting TYPE of payment. Maybe Then, there are a couple of things that need to be added here. Payment types, triggers (which is partially built in to type), checks (has payment been made?), explanations (that can be attached to almost anything).
+    Updating todo.txt accordingly.
+
+  BUT another issue comes up now. That is, can the code generated from this code DO anything. Can we run simulations of how they would perform under certain conditions? At the moment, obviously not. But in the long run there should be a simulated blockchain for the simulated contract to interact with. A simple database with contract-like API should do that just fine. Hmmmm. Actually, the chain needs to have some awareness of the addresses involved and a sense of time. Well, this is not for now.
+
+
 1/6/2017
   NOW: using Erb to process some basic code templates. Nothing like a full contract yet, just translating (currently) the party objects to javascript code. In theory, converting all the little pieces using consistent variable and function names should make compiling a final result easy. 
 
@@ -5,7 +14,7 @@
 
   NEXT:
     1. Test code generation with varying conditions (such as missing addresses)
-    2. Redirect generated code to an output file id desired
+    2. Redirect generated code to an output file if desired
     3. Run checks before outputting code (unless overridden?)
     4. There is no four.
     5. Fix the above bug.

@@ -1,6 +1,18 @@
-1.  A dummy payment address should not say the word 'dummy' but should have something that looks address like. (DONE)
-2. Term should have an end date or condition. (all payments made?)
-3. When a mistake is made (such as misspelling a party's name) it should be possible to edit it.
-4. A contract should be writable to a yaml or json file so it can be worked on across multiple sessions.
-5. Schedule a payment! (Party X will send Y coin to party Z no later than 5:00 PM on date A/B/C) (Partly done?)
-6. Payment object should have full payer/payee info (including addresses), not just name.
+1. Term should have an end date or condition. (all payments made?)
+2. When a mistake is made (such as misspelling a party's name) it should be possible to edit it.
+3. A contract should be writable to a yaml or json file so it can be worked on across multiple sessions.
+4. Payment object should have full payer/payee info (including addresses), not just name.
+5. Test code generation with varying conditions (such as missing addresses)
+6. Redirect generated code to an output file if desired
+7. Run checks before outputting code (unless overridden?)
+8. Payments should have a text description ("partial payment for manuscript" or "late fee" for example)
+9. There should be a check of whether a required payment has been received.
+      This one has some difficulty. Payments as currently recorded are asssumed to be outgoing. That is, the contract sees that a payment is due and makes it. Although, it doesn't actually do that. Some sort of test coin is required to run these examples!
+10. Payments should have a type such as "triggered late fee" ... hmmm. That is getting at addressing some of the above point.
+      10a. A type like "auto" would be for the contract to administer.
+      10b. A type of "incoming" would be something the contract would look for and possibly trigger other actions if it is or is not there.
+          10bi: But a penalty could also be "auto" or "incoming."
+      10c. A type of "penalty" would be triggered by other conditions.
+      10d. A type of "transfer" would simply look at the contract balance and send it to another address.
+      10e: A type of .. I dunno "deposit" could simply top up funds that are held within the contract for some other purpose, such as making scheduled payments or paying penalties. Hmmm. This is getting complicated.
+11. A generated contract needs some boilerplate methods such as "check balances." Maybe also something to dump history (payments made, notifications, etc). 
