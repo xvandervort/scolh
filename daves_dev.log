@@ -1,3 +1,11 @@
+1/23
+  Starting work on the term_list object. Since this is looking suspiciously like an active_model kind of thing, assume that every entry in the term_list needs a unique id. That way, when something is updated it can still be found? Okay, maybe that's not quite on point right now. Leave it for future consideration. Actually, if it's a list, every item in it has a natural index anyway. 
+
+1/22
+    Designing a way for the PaymentCommand to reference the specific party whose name is supplied to it so it can access the payment address. Looks like a Parties list might be needed, so that parties can be found by name, payment address, etc.
+
+    Alternatively, there could be a way to search the terms list for type and value. That actually might be better because it is more generic. But it means terms is no longer just an array. So what other methods would it need? Order? Oh! Then it can also make sure that no dupes are added. Nice. Okay. That's the way I'll go.
+
 1/21
   MISSING FEATURE: When someone pays, there should be an entry referring to WHAT they are paying for, even if it's just a text string explaining the consideration. In particular, think ahead. Suppose a smart contract encodes a payment to be triggered as a penalty for late delivery of goods. Shouldn't there be a label on that payment explaining that? Of course, in the future there's a plan to have "triggers" for payment. But does that necessarily satisfy the condition? There should be a human-readable string explaining it as well. There is, however, some danger that lazy people will fill in the string with something like, "payment for services rendered." That's not good. 
     Another approach might be to have an overall purpose or type for the contract. And an idea whether it's a one-off or some kind of ongoing relationship.

@@ -10,7 +10,7 @@ describe Scolh::TermCommand do
       term = Scolh::TermCommand.new line
       expect(term.start_date).to eq(date)
     end
-    
+
     it "should say its start date" do
       date = Date.today + 3.days
       string_date = "#{date.month}/#{date.day}/#{date.year}"

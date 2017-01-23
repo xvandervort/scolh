@@ -2,12 +2,13 @@ require "scolh/version"
 require 'highline'
 require 'highline/import'
 require 'scolh/command_factory'
+require 'scolh/term_list'
 
 module Scolh
   def run
     command = ""
     line_number = 1
-    terms = []
+    terms = TermList.new
     cf = CommandFactory.new
     hl = HighLine.new
     until command == "quit" do
@@ -16,7 +17,7 @@ module Scolh
       # execution block here
       begin
         if command == "list" || command == "l"
-          terms.map{|t| puts t }
+          terms.list.map{|t| puts t }
 
         else
           out = cf.parse command
@@ -26,10 +27,10 @@ module Scolh
           # TODO: Extract special handling from this location
           #       Maybe a handling method on the same class?
           if out.class.name == 'Scolh::OutputCommand'
-            say out.run(terms)
+            say out.run(terms.list)
 
           elsif out.class.name == 'Scolh::CheckCommand'
-            if out.run terms
+            if out.run terms.list
               say "<%= color('This contract passes validation.', :green) %>"
 
             else
