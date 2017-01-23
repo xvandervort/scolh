@@ -15,4 +15,4 @@
       10c. A type of "penalty" would be triggered by other conditions.
       10d. A type of "transfer" would simply look at the contract balance and send it to another address.
       10e: A type of .. I dunno "deposit" could simply top up funds that are held within the contract for some other purpose, such as making scheduled payments or paying penalties. Hmmm. This is getting complicated.
-11. A generated contract needs some boilerplate methods such as "check balances." Maybe also something to dump history (payments made, notifications, etc). 
+11. A generated contract needs some boilerplate methods such as "check balances." Maybe also something to dump history (payments made, notifications, etc).

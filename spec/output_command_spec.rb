@@ -6,7 +6,7 @@ describe Scolh::OutputCommand do
       o = Scolh::OutputCommand.new
       expect(o).to be_kind_of(Scolh::OutputCommand)
     end
-    
+
     # dummy outputs code that can be verified but not run.
     # it does this by masking addresses.
     # Why? So there is an example of a switch, of course!
@@ -14,13 +14,13 @@ describe Scolh::OutputCommand do
       o = Scolh::OutputCommand.new "print dummy = true"
       expect(o.dummy).to eq(true)
     end
-    
+
     it "should default dummy to false" do
       o = Scolh::OutputCommand.new
       expect(o.dummy).to eq(false)
     end
   end
-  
+
   context "code output" do
     before do
       # build a simple list of commands.
@@ -33,7 +33,7 @@ describe Scolh::OutputCommand do
       @list << c.parse("pay $1 from A to B on #{ Time.now.strftime("%m/%d/%Y") }")
       @o = Scolh::OutputCommand.new
     end
-    
+
     # verify the code later
     it "should output text" do
       out = @o.run @list
@@ -76,7 +76,7 @@ describe Scolh::OutputCommand do
     "}"
   end
 
-  def payment_js(payment, count = 1) 
+  def payment_js(payment, count = 1)
     "var payment#{count} = {\n" +
     "  payer: '#{payment.payer}',\n" +
     "  payee: '#{payment.payee}',\n" +
