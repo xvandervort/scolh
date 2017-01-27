@@ -1,5 +1,15 @@
+1/26
+  Party command can now be added to the payment command and that data will be preferred (so updates should work seamlessly).
+
+  PROBLEM: When a payment is created, you have to check for the corresponding party objects. BUT ALSO whenever a party is created, you have to check ALL existing payments to see if they need updated.
+
+  What's the easiest way? Add party if match? Sure. Why not? DONE
+  Now to wire it up. Problem: The main Scolh module run command, where all the work happens, is essentially untestable. Need to do some refactoring. Probably need to move it all out into a command processor?? Yes. That will also support running it with inputs from sources other than the command line.
+
 1/23
-  Starting work on the term_list object. Since this is looking suspiciously like an active_model kind of thing, assume that every entry in the term_list needs a unique id. That way, when something is updated it can still be found? Okay, maybe that's not quite on point right now. Leave it for future consideration. Actually, if it's a list, every item in it has a natural index anyway. 
+  Starting work on the term_list object. Since this is looking suspiciously like an active_model kind of thing, assume that every entry in the term_list needs a unique id. That way, when something is updated it can still be found? Okay, maybe that's not quite on point right now. Leave it for future consideration. Actually, if it's a list, every item in it has a natural index anyway.
+
+  How about adding a "soft check"? That means that an object basically tells you if it is complete or if it "wants data"? And if if comes back wanting data, you go searching for it. For now, this idea is probably too complex. But over the long term, I may have to revisit it.
 
 1/22
     Designing a way for the PaymentCommand to reference the specific party whose name is supplied to it so it can access the payment address. Looks like a Parties list might be needed, so that parties can be found by name, payment address, etc.

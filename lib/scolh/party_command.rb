@@ -3,7 +3,8 @@ module Scolh
   # maybe later it will also be attached to their responsibilities
   # OR even have a hierarchy
   class PartyCommand
-    attr_reader :name, :payment_address, :errors
+    attr_reader :errors
+    attr_accessor :name, :payment_address
 
     def initialize(command_line)
       @name, @payment_address = parse(command_line)

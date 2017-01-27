@@ -29,13 +29,13 @@ Examples (good so far):
 ```
     party joe has payment address 1FfmbHfnpaZjK4vyi1okTjHHvtN455paPH
 ```
-  
+
 The above means that one of the parties to the contract is referred to as joe and can receive payments at the stated address (on some blockchain somewhere)
 
 ```
   pay $35 from joe to jim on 3/21/2099
 ```
-  
+
 The above indicates an obligation for party named "joe" to pay another party named "jim" $35 (in some coin, not currently specified) on the stated date.
 
 ```
