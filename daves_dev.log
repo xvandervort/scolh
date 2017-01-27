@@ -6,6 +6,10 @@
   What's the easiest way? Add party if match? Sure. Why not? DONE
   Now to wire it up. Problem: The main Scolh module run command, where all the work happens, is essentially untestable. Need to do some refactoring. Probably need to move it all out into a command processor?? Yes. That will also support running it with inputs from sources other than the command line.
 
+  BUG: print command fails trying to print commands that do not yet have templates. It should skip the ones that don't actually work yet!
+
+  BUG: List command has some garbage ("[nil, nil, nil, nil]")
+
 1/23
   Starting work on the term_list object. Since this is looking suspiciously like an active_model kind of thing, assume that every entry in the term_list needs a unique id. That way, when something is updated it can still be found? Okay, maybe that's not quite on point right now. Leave it for future consideration. Actually, if it's a list, every item in it has a natural index anyway.
 

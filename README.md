@@ -47,7 +47,7 @@ The above indicates that the contract comes into force on December 11, 2017. Con
 ```
   list
 ```
-  
+
 The above prints out the current terms in the order they were entered.
 
 ```
