@@ -16,3 +16,9 @@
       10d. A type of "transfer" would simply look at the contract balance and send it to another address.
       10e: A type of .. I dunno "deposit" could simply top up funds that are held within the contract for some other purpose, such as making scheduled payments or paying penalties. Hmmm. This is getting complicated.
 11. A generated contract needs some boilerplate methods such as "check balances." Maybe also something to dump history (payments made, notifications, etc).
+19. Require some form of throttling - that is, no more than X payments in Y period of time (without special authorization)
+20. Allow requirement that payments must be countersigned (No automatic payments). 
+    20a. This is important for fiduciary accountability, especially with DAOs and other businesses. 
+21. Soft checks to warn if things such as 19 and 20 are not included.
+22. Filtering on list. Such as list parties or list payments should produce only what is requested.
+23. Filtering on print (similar to 22, filtering on list)

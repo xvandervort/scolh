@@ -2,6 +2,8 @@
 
 Scolh stands for something like "Smart COntract Language for Humans." This is proof of concept code that is intended to allow people to enter contract information in plain language and then generate a code or configuration file that a smart language interpreter can work with. Or something like that. Ideas may become more clear as time and work go on.
 
+For some background on the motivation for this project see the blog post at https://medium.com/@SingularDTV/smarter-contract-language-74efb79a8225#.kj2awi3df
+
 ## Installation
 
 Add this line to your application's Gemfile:

@@ -1,3 +1,8 @@
+2/1
+  BUG: "pay $35 from jim to joe on February 23, 2077)" converts to text as "pay $0 from   to   on 4" MUST decide: Do you throw errors on garbage like this or do you have it flunk checks later? OR give a warning that it is incomplete? (This last one is probably the preferred method).
+
+  Q: Should it be possible to connect this to a db? Ans: Probably but that's a long way off. It actually is not unreasonable to create a web interface rather than a command shell, which is pretty clunky in that it doesn't make editing of terms at all easy. Hmmm. That would also reduce the whole "CommandX" this and that. Logic would just go into the model. On the other hand, with a web model you have to manage persistence and isolate data. But you don't have to parse text input. You can have form fields. Maybe I'll try it for a while and see how it works out.
+
 1/26
   Party command can now be added to the payment command and that data will be preferred (so updates should work seamlessly).
 
@@ -9,6 +14,8 @@
   BUG: print command fails trying to print commands that do not yet have templates. It should skip the ones that don't actually work yet!
 
   BUG: List command has some garbage ("[nil, nil, nil, nil]")
+
+  NEXT: Fix the two bugs above and THEN do the update where parties are inserted into payments
 
 1/23
   Starting work on the term_list object. Since this is looking suspiciously like an active_model kind of thing, assume that every entry in the term_list needs a unique id. That way, when something is updated it can still be found? Okay, maybe that's not quite on point right now. Leave it for future consideration. Actually, if it's a list, every item in it has a natural index anyway.

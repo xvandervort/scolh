@@ -16,7 +16,7 @@ module Scolh
     def execute(command)
       @commands << command
       s = if command == "list" || command == "l"
-        @terms.list.map{|t| puts t }
+        @terms.list.join("\n")
 
       else
         out = @comfact.parse command
