@@ -2,10 +2,11 @@
 2. When a mistake is made (such as misspelling a party's name) it should be possible to edit it.
 3. A contract should be writable to a yaml or json file so it can be worked on across multiple sessions.
 4. Payment object should have full payer/payee info (including addresses), not just name.
+      4a. This requires having a person class (or at least a struct!) to manage the data.
 5. Test code generation with varying conditions (such as missing addresses)
 6. Redirect generated code to an output file if desired
 7. Run checks before outputting code (unless overridden?)
-8. Payments should have a text description ("partial payment for manuscript" or "late fee" for example)
+8. Payments should have a text description ("partial payment for manuscript" or "late fee" for example). aka. a memo field
 9. There should be a check of whether a required payment has been received.
       This one has some difficulty. Payments as currently recorded are asssumed to be outgoing. That is, the contract sees that a payment is due and makes it. Although, it doesn't actually do that. Some sort of test coin is required to run these examples!
 10. Payments should have a type such as "triggered late fee" ... hmmm. That is getting at addressing some of the above point.
@@ -22,3 +23,4 @@
 21. Soft checks to warn if things such as 19 and 20 are not included.
 22. Filtering on list. Such as list parties or list payments should produce only what is requested.
 23. Filtering on print (similar to 22, filtering on list)
+24. What kinds of boiler plate methods would really be necessary (and being boiler plate, could be added with a single command)? Simple stuff like send and receive payments are implied. I mean, what's needed to string it all together?
