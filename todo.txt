@@ -24,3 +24,6 @@
 22. Filtering on list. Such as list parties or list payments should produce only what is requested.
 23. Filtering on print (similar to 22, filtering on list)
 24. What kinds of boiler plate methods would really be necessary (and being boiler plate, could be added with a single command)? Simple stuff like send and receive payments are implied. I mean, what's needed to string it all together?
+      24a. Verifications and conditions?
+      24b. Notify! (if a payment comes in, if a payment does not come in)
+25. Certain actions (such as sending money) should require multiple signatures to release. Right?
